@@ -8,7 +8,7 @@ bp = Blueprint('tickets', __name__, url_prefix='/')
 def fetch_all_tickets():
     username = os.getenv('API_USERNAME')
     password = os.getenv('API_PASSWORD')
-    URL = f"https://{os.getenv('DOMAIN')}/api/v2/tickets"
+    URL = f"https://{os.getenv('API_DOMAIN')}.zendesk.com/api/v2/tickets"
 
     response = requests.get(URL, auth=(username, password))
 
