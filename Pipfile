@@ -8,6 +8,7 @@ flask = "*"
 python-dotenv = "*"
 requests = "*"
 pytest = "*"
+coverage = "*"
 
 [dev-packages]
 
