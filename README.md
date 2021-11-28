@@ -1,6 +1,6 @@
 # Ticket Master
 
-### An application to View Tickets from Zendesk API. Project created as a part of Zendesk Coding Challenge Summer - 2022.
+### An application to View Tickets from Zendesk API. Project created as a part of Zendesk Coding Challenge Summer - 2022
 
 ```console
 > git clone git@github.com:tejasgajare/ticketmaster.git
@@ -9,11 +9,10 @@
 > pipenv install
 ```
 
-### Create .env file in the ticketmaster directory.
+### Create a .env file in the ticketmaster directory to store our environment variables
 ```
 └── ticketmaster
     ├── .env
-    ├── .git
     ├── .gitignore
     ├── .venv
     ├── LICENSE
@@ -23,14 +22,14 @@
     ├── app
     └── run.py
 ```
-### Add the following environment variables to .env with your domain name and credentials.
-
+### Add the following environment variables to .env file with your domain name and credentials
+We will be using these environment variables inside our project for authentication
 ```
-API_DOMAIN=<sampledomainhere>
+API_DOMAIN=<yourdomain>
 API_USERNAME=<yourusername>
 API_PASSWORD=<yourpassword>
 ```
-Start the flask server
+### Start the flask server
 ```console
 > pipenv shell      # activate the virtual environment with pipenv
 > python run.py     # start the application
