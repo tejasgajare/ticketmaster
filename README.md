@@ -34,4 +34,13 @@ API_PASSWORD=<yourpassword>
 > pipenv shell      # activate the virtual environment with pipenv
 > python run.py     # start the application
 ```
+### To run unit tests
+```console
+> pytest
+```
 
+### To check the coverage for unit tests
+```console
+> coverage run -m pytest
+> coverage report
+```

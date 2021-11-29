@@ -1,11 +1,7 @@
-import os
-import tempfile
-
 import pytest
 
 from app import create_app
 from dotenv import load_dotenv
-from app import tickets
 
 load_dotenv()
 
