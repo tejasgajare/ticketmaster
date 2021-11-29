@@ -1,6 +1,7 @@
 # Ticket Master
 
-### An application to View Tickets from Zendesk API. Project created as a part of Zendesk Coding Challenge Summer - 2022
+### An application to View Tickets from Zendesk API
+Project created as a part of Zendesk Coding Challenge Summer - 2022
 
 ```console
 > git clone git@github.com:tejasgajare/ticketmaster.git
