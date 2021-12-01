@@ -3,17 +3,59 @@
 
 {% block content %}
 <div class="container">
-    <div class="d-flex justify-content-center">
-        <div class="row">
-            
-                {% for ticket in tickets: %}
-                <div class="card  m-2 p-2">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ ticket['subject'] }}</h5>
-                        <!-- <p class="card-text">{{ ticket['description'] }}</p> -->
-                    </div>
+    <div class="card">
+        <div class="card-body">
+
+            <h5 class="card-title">Tickets requiring your attention (100) </h5>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <table class="table table-borderless">
+                        <tr class="table-light">
+                            <th>ID</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Last updated</th>
+                        </tr>
+                        {% for ticket in data['tickets']: %}
+                        <tr>
+                            <td>{{ ticket['id'] }}</td>
+                            <td>{{ ticket['subject'] }}</td>
+                            <td>
+                                <span class="badge rounded-pill bg-success">{{ ticket['status'] }}</span>
+                            </td>
+                            <td>
+                                <span class="badge rounded-pill bg-success">{{ ticket['priority'] }}</span>
+                            </td>
+                            <td>{{ ticket['updated_at'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
-                {% endfor %}
+                <div class="col-12 d-flex justify-content-start">
+                    <nav aria-label="...">
+                        <ul id="tickets-pagination" class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" pagelink="{{data['previous_page']}}" href="#" >Previous</a>
+                            </li>
+                            <!-- <li class="page-item">
+                                <a class="page-link" href="#"></a>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li> -->
+                            <li class="page-item">
+                                <a class="page-link" pagelink="{{data['next_page']}}" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>
         </div>
-    </div>
+      </div>
+</div>
 {% endblock content %}
