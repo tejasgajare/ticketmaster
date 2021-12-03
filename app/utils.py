@@ -43,6 +43,9 @@ def set_namefields(data):
     return data
 
 def set_namevalues(data):
+    if 'error' in data:
+        return data
+        
     if 'ticket' not in data:
         data['ticket'] = {}
         return data

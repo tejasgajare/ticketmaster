@@ -16,7 +16,7 @@ def fetch_ticket(id=None):
     data = utils.set_namevalues(data)
 
     if 'ticket' not in data:
-        return None
+        return data
 
     ticket = data['ticket']
     return ticket
@@ -27,8 +27,11 @@ def show_ticket(id=None):
         return redirect(url_for('list_tickets'))
 
     try:
-        ticket = fetch_ticket(id)
+        data = fetch_ticket(id)
     except (requests.exceptions.RequestException, requests.exceptions.ConnectionError):
         return render_template('error.html', message='Failed to connect to the server.')
+
+    if 'error' in data:
+        return render_template('error.html', code="", message=data['error']+'.')
     
-    return render_template("show_ticket.html", ticket=ticket)
+    return render_template("show_ticket.html", ticket=data)

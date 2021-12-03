@@ -32,8 +32,11 @@ def show_tickets():
     try:
         data = fetch_all_tickets(page)
     except (requests.exceptions.RequestException, requests.exceptions.ConnectionError):
-        return render_template('error.html', message='Failed to connect to the server.')
+        return render_template('error.html', code="", message='Could not connect to the server.')
     
+    if 'error' in data:
+        return render_template('error.html', code="", message=data['error']+'.')
+
     if 'tickets' not in data:
         data['tickets'] = []
     if 'previous_page' not in data:
