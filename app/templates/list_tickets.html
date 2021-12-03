@@ -2,32 +2,42 @@
 
 
 {% block content %}
-<div class="container">
-    <div class="card">
-        <div class="card-body">
 
-            <h5 class="card-title">Tickets requiring your attention (100) </h5>
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <table class="table table-borderless">
-                        <tr class="table-light">
-                            <th>ID</th>
-                            <th>Subject</th>
-                            <th>Status</th>
-                            <th>Priority</th>
-                            <th>Last updated</th>
-                        </tr>
-                        {% for ticket in data['tickets']: %}
-                        <tr>
+{% if not tickets or count == 0 %}
+ 
+<h1> No data found </h1>
+ 
+{% else %}
+ 
+
+ 
+
+
+<div class="card border-0 ">
+    <div class="card-body mx-0 px-0">
+        
+        <h5 class="card-title">Tickets requiring your attention ({{ count }}) </h5>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <table class="table table-borderless table-sm">
+                    
+                    <tr class="table-head">
+                        <th>ID</th>
+                        <th>Status</th>
+                        <th>Subject</th>
+                        <th>Requester</th>
+                        <th>Last updated</th>
+                        <th>Assignee</th>
+                    </tr>
+                    {% for ticket in tickets: %}
+                    
+                    <tr class="ticket clickable" data-href="{{ url_for('show_ticket.show_ticket', id=ticket['id']) }}">
                             <td>{{ ticket['id'] }}</td>
+                            <td><span class="status badge rounded-pill">{{ ticket['status'] }}</span></td>
                             <td>{{ ticket['subject'] }}</td>
-                            <td>
-                                <span class="badge rounded-pill bg-success">{{ ticket['status'] }}</span>
-                            </td>
-                            <td>
-                                <span class="badge rounded-pill bg-success">{{ ticket['priority'] }}</span>
-                            </td>
-                            <td>{{ ticket['updated_at'] }}</td>
+                            <td>{{ ticket['requester'] }}</td>
+                            <td><span class="updated"> {{ ticket['updated_at'] }} </span></td>
+                            <td>{{ ticket['assignee'] }}</td>
                         </tr>
                         {% endfor %}
                     </table>
@@ -36,7 +46,7 @@
                     <nav aria-label="...">
                         <ul id="tickets-pagination" class="pagination">
                             <li class="page-item">
-                                <a class="page-link" pagelink="{{data['previous_page']}}" href="#" >Previous</a>
+                                <a class="page-link" pagelink="{{ previous_page }}" href="#" >Previous</a>
                             </li>
                             <!-- <li class="page-item">
                                 <a class="page-link" href="#"></a>
@@ -48,7 +58,7 @@
                                 <a class="page-link" href="#">3</a>
                             </li> -->
                             <li class="page-item">
-                                <a class="page-link" pagelink="{{data['next_page']}}" href="#">Next</a>
+                                <a class="page-link" pagelink="{{ next_page }}" href="#">Next</a>
                             </li>
                         </ul>
                     </nav>
@@ -56,6 +66,7 @@
                 
             </div>
         </div>
-      </div>
-</div>
-{% endblock content %}
+    </div>
+    {% endif %}
+
+    {% endblock content %}

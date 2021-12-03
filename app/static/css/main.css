@@ -1,3 +1,23 @@
-html {
-    font-family: 'Poppins', sans-serif !important;
+.navbar{
+    background: #03363d !important;
+}
+
+.navbar-brand{
+    color: #fff !important;
+}
+
+.table-head{
+    background: #e7e7e7 !important;
+}
+
+.clickable:hover {
+    background: #0081920c;
+}
+
+.status{
+    width: 60% !important;
+}
+
+.label-info{
+    font-size: small !important;
 }

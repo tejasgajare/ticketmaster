@@ -2,7 +2,57 @@
 
 
 {% block content %}
-<div class="container">
-    {{ ticket['subject'] }}
+
+{% if not ticket %}
+ 
+<h1> No data found </h1>
+ 
+{% else %}
+
+<div class="row">
+    <div class="col-3">
+
+        <div class="card border-0">
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong class="label-info text-uppercase">Requester</strong>
+                        <h6 class="card-subtitle fw-bold fs-6 mb-2 text-muted">{{ticket['requester']}}</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="label-info text-uppercase">Assignee</strong>
+                        <h6 class="card-subtitle fw-bold fs-6 mb-2 text-muted">{{ticket['assignee']}}</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <strong class="label-info text-uppercase">Organization</strong>
+                        <h6 class="card-subtitle fw-bold fs-6 mb-2 text-muted">{{ticket['organization']}}</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <strong class="label-info text-uppercase">Tags</strong>
+                        </div>
+                        {% for tag in ticket['tags']: %}
+                            <span class="badge bg-light text-dark">{{tag}}</span>
+                        {% endfor %}
+                    </li>
+                </ul>
+
+               
+            </div>
+  
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card border-0">
+            <div class="card-body">
+                <h5 class="card-title">{{ticket['subject']}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Ticket# {{ticket['id']}}</h6>
+                <p class="card-text">{{ticket['description']}}</p>
+            </div>
+        </div>
+      </div>
 </div>
+
+{% endif %}
+
 {% endblock content %}
