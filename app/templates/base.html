@@ -7,8 +7,8 @@
 
     
     <!-- Bootstrap CSS -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/lib/bootstrap.min.css') }}">
-    <script type="text/javascript" src="{{url_for('static', filename='js/lib/moment.js')}}"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/dist/bootstrap.min.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/dist/moment.js')}}"></script>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
     <title>Ticket Master</title>
   </head>
@@ -26,8 +26,8 @@
       {% endblock content %}
     </div>
 
-    <script src="{{url_for('static', filename='js/lib/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/lib/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/dist/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/dist/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
 
   </body>
