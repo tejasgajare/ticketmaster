@@ -48,4 +48,6 @@ API_PAGESIZE=25
 ```
 
 ### Screenshots
-![alt text](https://github.com/tejasgajare/ticketmaster/blob/main/screenshots/Screenshot%202021-12-03%20075407.png)
+![alt text](https://github.com/tejasgajare/ticketmaster/blob/main/screenshots/ScreeshotListTickets.png)
+
+![alt text](https://github.com/tejasgajare/ticketmaster/blob/main/screenshots/ScreenshotShowTicket.png)
