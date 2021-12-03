@@ -26,9 +26,9 @@ Project created as a part of Zendesk Coding Challenge Summer - 2022
 ### Add the following environment variables to .env file with your domain name and credentials
 We will be using these environment variables inside our project for authentication and other settings
 ```
-API_DOMAIN=zcctejasgajare
-API_USERNAME=<yourusername>
-API_PASSWORD=<yourpassword>
+API_DOMAIN=<yourdomain>         # If your domain name is zccstudents.zendesk.com, please just put zccstudents.
+API_USERNAME=<yourusername>     # Zendesk account email address
+API_PASSWORD=<yourpassword>     # Zendesk account password
 API_PAGESIZE=25
 ```
 ### Start the flask server
