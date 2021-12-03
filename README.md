@@ -46,3 +46,6 @@ API_PAGESIZE=25
 > coverage run -m pytest
 > coverage report
 ```
+
+### Screenshots
+![alt text](https://github.com/tejasgajare/ticketmaster/blob/main/screenshots/Screenshot%202021-12-03%20075407.png)
